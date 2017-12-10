@@ -28,10 +28,11 @@ pipeline {
                         }
                     }
                 }
-        stage ('Spring boot run  Stage') {
+        stage ('Running stage') {
                     steps {
                         withMaven(maven : 'maven_3_5_2') {
-                            sh 'mvn spring-boot:run'
+                            sh "cd ~"
+                            sh 'java -jar  spring-boot-basewebapp-0.0.1-SNAPSHOT.jar'
                         }
                     }
                 }
