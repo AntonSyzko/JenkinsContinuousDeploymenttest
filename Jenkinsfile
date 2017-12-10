@@ -6,6 +6,9 @@ pipeline {
 
             steps {
                 echo "Starting maven build"
+                sh "whoami && pwd "
+                sh "mvn --version"
+                sh "java -version"
                 withMaven(maven : 'maven_3_5_2') {
                     sh 'mvn clean compile'
                 }
